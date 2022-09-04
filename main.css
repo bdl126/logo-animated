@@ -49,12 +49,12 @@ body {
 .top {
     z-index: 3;
     opacity: 1;
-    animation: top_strech 2s ease-in-out;
+    animation: top_strech 2s ease;
 }
 
 .left_bottom  {
     z-index: 5;
-    animation: left_bottom_strech 1.5s ease-in-out 0.5s forwards;
+    animation: left_bottom_strech 1.5s ease 0.5s forwards;
     overflow: visible;
 }
 
@@ -63,7 +63,7 @@ body {
 .bottom_left {
     z-index: 5;
     /* opacity: 1; */
-    animation: bottom_left_animation 500ms ease-in-out 2s forwards;
+    animation: bottom_left_animation 500ms ease 2s forwards;
 }
 
 .hiding_bottom_arc_2 {
@@ -78,17 +78,15 @@ body {
     border-color: black black transparent transparent;
     transform: translate(-85%, -15%)  rotate(34deg);
     border-radius: 100%;
-    animation: hiding_bottom_arc_2 500ms ease-in-out 2.25s forwards;
+    animation: hiding_bottom_arc_2 500ms ease 2.25s forwards;
 }
 
 .middle {
     position: relative;
     left: 40%;
     z-index: 5;
-    /* width: 5%; */
 
-    /* transform: translate(-250%, -50%); */
-    animation: middle_animation 500ms ease-in-out 2.5s forwards;
+    animation: middle_animation 500ms ease 2.5s forwards;
 }
 
 .big_arc {
@@ -116,7 +114,7 @@ body {
     border-color: black black transparent transparent;
     transform: translate(-50%, -50%)  rotate(54deg);
     border-radius: 100%;
-    animation: hiding_big_arc 1s ease-in-out 2.25s forwards;
+    animation: hiding_big_arc 1s ease 2s forwards;
 }
 
 .top_arc {
@@ -137,7 +135,7 @@ body {
     border-color: transparent black  transparent transparent;
     transform: translate(-50%, -50%)  rotate(5deg);
     border-radius: 100%;
-    animation: hiding_top_arc 1s ease-in-out 3s forwards;
+    animation: hiding_top_arc 0.5s ease 3s forwards;
 }
 
 
@@ -188,7 +186,7 @@ body {
 
 @keyframes top_strech {
     from {
-        left: -500%;
+        left: -2000%;
         width: 400%;
     }
 
@@ -199,7 +197,7 @@ body {
 
 @keyframes left_bottom_strech {
     from {
-        top: -500%;
+        top: -2000%;
         height: 400%;
         opacity: 1;
     }
@@ -216,7 +214,6 @@ body {
 
     to {
         transform: translate(-85%, -15%)  rotate(-134deg);
-        /* top: 47%; */
     }
 }
 
@@ -238,13 +235,8 @@ body {
 
     to {
         transform: translate(-50%, -50%)  rotate(-85deg);
-        /* top: 47%; */
     }
 }
-
-
-
-
 
 @keyframes bottom_left_animation {
     0% {
@@ -282,5 +274,20 @@ body {
 
     to {
         transform: translate(-50%, -50%) rotate(90deg);
+    }
+}
+
+@media screen and (min-width:600px) {
+
+    .bottom_arc,
+    .big_arc,
+    .top_arc,
+    .top,
+    .bottom_arc_2,
+    .middle,
+    .bottom_left,
+    .left_bottom {
+        width: 20vw;
+        height: 19vw;
     }
 }
