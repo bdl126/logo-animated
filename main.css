@@ -17,7 +17,6 @@ body {
     transform: translate(-50%, -50%);
     display: inline-block;
     overflow: visible;
-    border: 2px solid red;
 }
 
 .bottom_arc,
@@ -35,7 +34,6 @@ body {
     height: 19vw;
     transform: translate(-50%, -50%);
     opacity: 0;
-    /* display: inline-block; */
 }
 
 
@@ -47,7 +45,7 @@ body {
     top: 80%;
     width: 10vw;
     height: 4vw;
-    animation: hiding_bottom_left_animation 2000ms ease 2s forwards;
+    animation: hiding_bottom_left_animation 1.5s ease-out 0.8s forwards;
 }
 
 .hiding_middle {
@@ -59,12 +57,11 @@ body {
     left: 1%;
     width: 8vw;
     height: 4vw;
-    animation: hiding_middle_animation 2000ms ease 2.5s forwards;
+    animation: hiding_middle_animation 1.5s ease-out 0.8s forwards;
 }
 
 .smooth_corner {
     z-index: 8;
-    /* background-color: red; */
     opacity: 1;
     position: absolute;
     border: 2vw solid #30343C;
@@ -75,7 +72,6 @@ body {
     left: 0%;
     width: 5vw;
     height: 5vw;
-    /* animation: hiding_middle_animation 2000ms ease 2.5s forwards; */
 }
 
 .bottom_arc_2 {
@@ -88,14 +84,13 @@ body {
 
 .top {
     z-index: 4;
-    opacity: 1;
-    animation: top_strech 2s ease;
+    animation: top_strech 1s ease-out forwards;
     overflow: visible
 }
 
 .left_bottom  {
     z-index: 5;
-    animation: left_bottom_strech 1.5s ease 0.5s forwards;
+    animation: left_bottom_strech 1s ease-out forwards;
     overflow: visible;
 }
 
@@ -104,7 +99,6 @@ body {
 .bottom_left {
     z-index: 3;
     opacity: 1;
-    /* animation: bottom_left_animation 500ms ease 2s forwards; */
 }
 
 .hiding_bottom_arc_2 {
@@ -119,7 +113,7 @@ body {
     border-color: black black transparent transparent;
     transform: translate(-85%, -15%)  rotate(34deg);
     border-radius: 100%;
-    animation: hiding_bottom_arc_2 500ms ease 2.25s forwards;
+    animation: hiding_bottom_arc_2 333ms ease 1s forwards;
 }
 
 .middle {
@@ -152,7 +146,7 @@ body {
     border-color: black black transparent transparent;
     transform: translate(-50%, -50%)  rotate(54deg);
     border-radius: 100%;
-    animation: hiding_big_arc 1s ease 2s forwards;
+    animation: hiding_big_arc 0.75s linear 0.8s forwards;
 }
 
 .top_arc {
@@ -172,8 +166,8 @@ body {
     border-color: transparent black  transparent transparent;
     transform: translate(-50%, -50%)  rotate(5deg);
     border-radius: 100%;
-    animation: hiding_top_arc 0.5s ease 3s forwards;
-} */
+    animation: hiding_top_arc 333ms ease-in-out 1.2s forwards;
+}
 
 
 
@@ -222,18 +216,19 @@ body {
 
 @keyframes top_strech {
     from {
-        left: -2000%;
-        width: 400%;
+        opacity: 1;
+        left: -1000%;
+        width: 600%;
     }
 
     to {
-        left: 50%;
+        opacity: 1;
     }
 }
 
 @keyframes left_bottom_strech {
     from {
-        top: -2000%;
+        top: -1000%;
         height: 400%;
         opacity: 1;
     }
@@ -280,7 +275,7 @@ body {
     }
 
     to {
-        translate: 800%;
+        translate: 400%;
     }
 }
 
@@ -290,7 +285,7 @@ body {
     }
 
     to {
-        translate: -800%;
+        translate: 700%;
     }
 }
 
