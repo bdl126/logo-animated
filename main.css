@@ -1,6 +1,7 @@
 :root {
     --hidecolor: black;
-    --hidecolor2:green;
+    --hidecolor2:#000000;
+    --time_factor: 1.20
 }
 
 body {
@@ -38,26 +39,26 @@ body {
 
 
 .hiding_bottom_left {
-    z-index: 4;
-    background-color: black;
+    z-index: 5;
+    background-color: var(--hidecolor2);
     opacity: 1;
     position: absolute;
     top: 80%;
-    width: 10vw;
+    width: 8vw;
     height: 4vw;
-    animation: hiding_bottom_left_animation 1.5s ease-out 0.8s forwards;
+    animation: hiding_bottom_left_animation calc(1.5s * var(--time_factor)) ease-out calc(1.55s * var(--time_factor)) forwards;
 }
 
 .hiding_middle {
-    z-index: 4;
-    background-color: black;
+    z-index: 7;
+    background-color: var(--hidecolor2);
     opacity: 1;
     position: absolute;
     top: 40%;
     left: 1%;
     width: 8vw;
     height: 4vw;
-    animation: hiding_middle_animation 1.5s ease-out 0.8s forwards;
+    animation: hiding_middle_animation calc(1.5s * var(--time_factor)) ease-out calc(1.2s * var(--time_factor)) forwards;
 }
 
 .smooth_corner {
@@ -83,42 +84,42 @@ body {
 /* Happend at the same time */
 
 .top {
-    z-index: 4;
-    animation: top_strech 1s ease-out forwards;
+    z-index: 6;
+    animation: top_strech calc(1s * var(--time_factor)) linear forwards;
     overflow: visible
 }
 
 .left_bottom  {
-    z-index: 5;
-    animation: left_bottom_strech 1s ease-out forwards;
+    z-index: 8;
+    animation: left_bottom_strech calc(1s * var(--time_factor)) ease-out forwards;
     overflow: visible;
 }
 
 /* Happend at the same time */
 
 .bottom_left {
-    z-index: 3;
+    z-index: 4;
     opacity: 1;
 }
 
 .hiding_bottom_arc_2 {
-    z-index: 2;
+    z-index: 3;
     box-sizing: border-box;
     position: absolute;
     top: 50%;
     left: 50%;
     width: 12vw;
     height: 12vw;
-    border: 3vw solid black;
-    border-color: black black transparent transparent;
+    border: 3vw solid  var(--hidecolor2);
+    border-color:  var(--hidecolor2)  var(--hidecolor2) transparent transparent;
     transform: translate(-85%, -15%)  rotate(34deg);
     border-radius: 100%;
-    animation: hiding_bottom_arc_2 333ms ease 1s forwards;
+    animation: hiding_bottom_arc_2 calc(333ms * var(--time_factor)) ease  calc(1.35s * var(--time_factor)) forwards;
 }
 
 .middle {
     position: relative;
-    z-index: 3;
+    z-index: 6;
     opacity: 1;
 }
 
@@ -142,35 +143,32 @@ body {
     left: 50%;
     width: 22vw;
     height: 22vw;
-    border: 4vw solid black;
-    border-color: black black transparent transparent;
+    border: 4vw solid  var(--hidecolor2);
+    border-color:  var(--hidecolor2)  var(--hidecolor2) transparent transparent;
     transform: translate(-50%, -50%)  rotate(54deg);
     border-radius: 100%;
-    animation: hiding_big_arc 0.75s linear 0.8s forwards;
+    animation: hiding_big_arc  calc(0.75s * var(--time_factor)) linear calc(0.95s * var(--time_factor)) forwards;
 }
 
 .top_arc {
     opacity: 1;
-    z-index: 0;
+    z-index: 4;
 }
 
 .hiding_top_arc {
-    z-index: 1;
+    z-index: 5;
     box-sizing: border-box;
     position: absolute;
     top: 32%;
     left: 28%;
     width: 12vw;
     height: 12vw;
-    border: 3vw solid black;
-    border-color: transparent black  transparent transparent;
-    transform: translate(-50%, -50%)  rotate(5deg);
+    border: 3vw solid  var(--hidecolor2);
+    border-color: transparent  var(--hidecolor2)  var(--hidecolor2) transparent;
+    transform: translate(-50%, -50%)  rotate(10deg);
     border-radius: 100%;
-    animation: hiding_top_arc 333ms ease-in-out 1.2s forwards;
+    animation: hiding_top_arc calc(333ms * var(--time_factor)) ease-in-out calc(1s * var(--time_factor)) forwards;
 }
-
-
-
 
 /* Animation part end */
 
@@ -215,25 +213,39 @@ body {
 }
 
 @keyframes top_strech {
-    from {
-        opacity: 1;
-        left: -1000%;
-        width: 600%;
+    0% {
+
+        left: -200%;
+        width: 0%;
     }
 
-    to {
+    50% {
+        width: 50%;
+    }
+
+    80% {
+        /* left: -20%; */
+        opacity: 0.5;
+
+    }
+
+    100% {
+        width: 100%;
         opacity: 1;
     }
 }
 
 @keyframes left_bottom_strech {
-    from {
-        top: -1000%;
+    0% {
+        top: -500%;
         height: 400%;
-        opacity: 1;
     }
 
-    to {
+    80% {
+        opacity: 0.5;
+    }
+
+    100% {
         top: 50%;
         opacity: 1;
     }
@@ -244,7 +256,7 @@ body {
     }
 
     to {
-        transform: translate(-85%, -15%)  rotate(-134deg);
+        transform: translate(-85%, -15%)  rotate(220deg);
     }
 }
 
@@ -265,7 +277,7 @@ body {
     }
 
     to {
-        transform: translate(-50%, -50%)  rotate(-85deg);
+        transform: translate(-50%, -50%)  rotate(190deg);
     }
 }
 
@@ -275,7 +287,7 @@ body {
     }
 
     to {
-        translate: 400%;
+        translate: -400%;
     }
 }
 
@@ -285,7 +297,7 @@ body {
     }
 
     to {
-        translate: 700%;
+        translate: -400%;
     }
 }
 
